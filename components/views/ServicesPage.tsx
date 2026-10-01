@@ -3,10 +3,8 @@
 import { useState } from 'react';
 import type { Lang, Route } from '@/lib/types';
 import { COPY } from '@/lib/data';
-import FaceMascot from '@/components/FaceMascot';
 import GlossaryTerm from '@/components/GlossaryTerm';
 import ServicesCarousel from '@/components/ServicesCarousel';
-import LatenteLogo from '@/components/LatenteLogo';
 
 interface ServicesPageProps {
   lang: Lang;
@@ -36,9 +34,6 @@ export default function ServicesPage({ lang, setRoute }: ServicesPageProps) {
       <section className="services container">
         <div className="services__head">
           <h1 className="t-h1" style={{ fontSize: 'clamp(34px, 4vw, 60px)', fontWeight: 700 }}>{t.headLine}</h1>
-          <div className="services__head-face">
-            <FaceMascot size={56} color="var(--lime)" />
-          </div>
         </div>
 
         <div className="services__grid">
@@ -85,17 +80,11 @@ export default function ServicesPage({ lang, setRoute }: ServicesPageProps) {
 
         <div className="services__cta">
           <p className="services__cta-line">
-            {lang === 'es' ? (
-              <>
-                Si tienes una idea,
-                <span className="services__cta-line2">
-                  HAGÁMOSLA
-                  <span className="services__cta-logo">
-                    <LatenteLogo height={40} sub={false} color="var(--lavender)" />
-                  </span>
-                </span>
-              </>
-            ) : t.cta}
+            {lang === 'es' ? 'Si tienes una idea,' : 'If you have an idea,'}
+            <span className="services__cta-line2">
+              {lang === 'es' ? 'HAGÁMOSLA' : "LET'S MAKE IT"}
+              <span className="services__cta-brand">Latente</span>
+            </span>
           </p>
           <button
             className="services__cta-btn"

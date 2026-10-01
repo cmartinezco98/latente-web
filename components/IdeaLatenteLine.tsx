@@ -7,9 +7,10 @@ interface IdeaLatenteLineProps {
   text: string;
   folder: string;
   count?: number;
+  hoverColor?: string;
 }
 
-export default function IdeaLatenteLine({ text, folder, count = 6 }: IdeaLatenteLineProps) {
+export default function IdeaLatenteLine({ text, folder, count = 6, hoverColor }: IdeaLatenteLineProps) {
   const [hovering, setHovering] = useState(false);
   const [index, setIndex] = useState(0);
   const previewRef = useRef<HTMLSpanElement>(null);
@@ -30,6 +31,7 @@ export default function IdeaLatenteLine({ text, folder, count = 6 }: IdeaLatente
   return (
     <p
       className={`home-closing__line${hovering ? ' is-hover' : ''}`}
+      style={hoverColor ? ({ '--hover-color': hoverColor } as React.CSSProperties) : undefined}
       onMouseEnter={(e) => { setIndex(0); setHovering(true); moveTo(e); }}
       onMouseMove={moveTo}
       onMouseLeave={() => setHovering(false)}

@@ -7,7 +7,6 @@ import { COPY } from '@/lib/data';
 import { useHeroScroll } from '@/hooks/useHeroScroll';
 import { useInView } from '@/hooks/useInView';
 import Ticker from '@/components/Ticker';
-import HomeFooter from '@/components/HomeFooter';
 import IdeaLatenteLine from '@/components/IdeaLatenteLine';
 
 interface HomePageProps {
@@ -130,11 +129,10 @@ export default function HomePage({ lang }: HomePageProps) {
 
         <div className="home-closing">
           <div className="home-closing__lines" aria-hidden="true">
-            <IdeaLatenteLine text="Idea Latente" folder="/assets/home/idea-latente-1" />
-            <IdeaLatenteLine text="Idea Latente" folder="/assets/home/idea-latente-2" />
-            <IdeaLatenteLine text="Idea Latente" folder="/assets/home/idea-latente-3" />
+            <IdeaLatenteLine text="Idea Latente" folder="/assets/home/idea-latente-1" hoverColor="var(--lavender)" />
+            <IdeaLatenteLine text="Idea Latente" folder="/assets/home/idea-latente-2" hoverColor="var(--lime)" />
+            <IdeaLatenteLine text="Idea Latente" folder="/assets/home/idea-latente-3" hoverColor="var(--lavender-soft)" />
           </div>
-          <HomeFooter />
         </div>
       </section>
     </div>

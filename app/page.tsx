@@ -5,7 +5,6 @@ import type { Lang, Route } from '@/lib/types';
 import { PROJECTS } from '@/lib/data';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import WhatsAppButton from '@/components/WhatsAppButton';
 import HomePage from '@/components/views/HomePage';
 import PortfolioPage from '@/components/views/PortfolioPage';
 import ProjectDetailPage from '@/components/views/ProjectDetailPage';
@@ -87,7 +86,6 @@ export default function SPA() {
         {route === 'contact'  && <ContactPage  lang={lang} />}
       </main>
       <Footer setRoute={setRoute} lang={lang} />
-      <WhatsAppButton />
     </>
   );
 }

@@ -22,6 +22,7 @@ yarn-error.log*
 .env*.local
 
 # google oauth client secret (downloaded from Cloud Console)
+./secrets
 client_secret_*.json
 token.json
 get-gmail-refresh-token.mjs

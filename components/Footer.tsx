@@ -18,13 +18,13 @@ export default function Footer({ setRoute, lang }: FooterProps) {
       <div className="site-footer__top container">
         <div className="site-footer__links">
           <a href="https://instagram.com/latente.studio" target="_blank" rel="noreferrer" className="link-u">
-            IG
+            Instagram
           </a>
-          <a href="https://www.behance.net" target="_blank" rel="noreferrer" className="link-u">
-            BÉ
+          <a href="https://www.linkedin.com/company/latente-studio" target="_blank" rel="noreferrer" className="link-u">
+            LinkedIn
           </a>
           <button
-            className="pill"
+            className="pill pill--terra"
             onClick={() => { setRoute('contact'); window.scrollTo({ top: 0 }); }}
           >
             {t.contact}
