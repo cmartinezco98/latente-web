@@ -1,0 +1,48 @@
+# dependencies
+node_modules/
+
+# next.js
+.next/
+out/
+
+# production
+build/
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# env files
+.env
+.env*.local
+
+# google oauth client secret (downloaded from Cloud Console)
+client_secret_*.json
+token.json
+get-gmail-refresh-token.mjs
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# images
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.gif
+*.avif
+*.svg
+*.ico
+*.mp4
+*.mov
+*.webm
+
+# local
+optimizar-imagenes.js
+optimizar-videos.js
