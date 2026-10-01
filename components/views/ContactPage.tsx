@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { Lang } from '@/lib/types';
 import { COPY } from '@/lib/data';
 import FaceMascot from '@/components/FaceMascot';
@@ -9,7 +9,9 @@ interface ContactPageProps {
   lang: Lang;
 }
 
-type FormStatus = 'idle' | 'sending' | 'sent';
+type FormStatus = 'idle' | 'sending' | 'sent' | 'error';
+type SlotsStatus = 'idle' | 'loading' | 'error';
+type BookingStatus = 'idle' | 'sending' | 'sent' | 'error' | 'slot_taken';
 
 export default function ContactPage({ lang }: ContactPageProps) {
   const t = COPY[lang].contact;
@@ -32,7 +34,39 @@ export default function ContactPage({ lang }: ContactPageProps) {
   for (let i = 0; i < startDay; i++) cells.push(null);
   for (let d = 1; d <= last.getDate(); d++) cells.push(d);
 
-  const slots = ['10:00', '11:30', '14:00', '15:30', '17:00'];
+  // Real availability, fetched from Google Calendar via /api/calendar/availability.
+  const [slots, setSlots] = useState<string[]>([]);
+  const [slotsStatus, setSlotsStatus] = useState<SlotsStatus>('idle');
+
+  // Mini booking form — separate from the general contact form below,
+  // only what's needed to create the calendar event and invite the guest.
+  const [booking, setBooking] = useState({ name: '', email: '', phone: '', note: '' });
+  const [bookingStatus, setBookingStatus] = useState<BookingStatus>('idle');
+
+  const dateStrFor = (day: number) =>
+    `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+
+  const fetchAvailability = async (day: number) => {
+    setSlotsStatus('loading');
+    try {
+      const res = await fetch(`/api/calendar/availability?date=${dateStrFor(day)}`);
+      if (!res.ok) throw new Error('bad_response');
+      const data = await res.json();
+      setSlots(Array.isArray(data.slots) ? data.slots : []);
+      setSlotsStatus('idle');
+    } catch {
+      setSlots([]);
+      setSlotsStatus('error');
+    }
+  };
+
+  useEffect(() => {
+    if (selectedDay === null) return;
+    setSelectedSlot(null);
+    setBookingStatus('idle');
+    fetchAvailability(selectedDay);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedDay, year, month]);
 
   const changeMonth = (delta: number) => {
     setMonthOffset((o) => Math.min(3, Math.max(0, o + delta)));
@@ -43,14 +77,71 @@ export default function ContactPage({ lang }: ContactPageProps) {
   const goToForm = () =>
     document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('sending');
-    setTimeout(() => setStatus('sent'), 900);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          message: form.message,
+          phone: form.phone || undefined,
+          service: form.service || undefined,
+        }),
+      });
+
+      const data = await res.json().catch(() => ({ ok: false }));
+      if (!res.ok || !data.ok) throw new Error('contact_failed');
+
+      setStatus('sent');
+    } catch {
+      setStatus('error');
+    }
   };
 
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
     setForm({ ...form, [k]: e.target.value });
+
+  const setBookingField = (k: keyof typeof booking) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+    setBooking({ ...booking, [k]: e.target.value });
+
+  const submitBooking = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (selectedDay === null || !selectedSlot) return;
+
+    setBookingStatus('sending');
+    try {
+      const res = await fetch('/api/calendar/book', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name:  booking.name,
+          email: booking.email,
+          phone: booking.phone || undefined,
+          note:  booking.note || undefined,
+          date:  dateStrFor(selectedDay),
+          slot:  selectedSlot,
+        }),
+      });
+
+      if (res.status === 409) {
+        setBookingStatus('slot_taken');
+        setSelectedSlot(null);
+        fetchAvailability(selectedDay);
+        return;
+      }
+
+      const data = await res.json().catch(() => ({ ok: false }));
+      if (!res.ok || !data.ok) throw new Error('booking_failed');
+
+      setBookingStatus('sent');
+    } catch {
+      setBookingStatus('error');
+    }
+  };
 
   return (
     <div className="route-enter">
@@ -101,7 +192,16 @@ export default function ContactPage({ lang }: ContactPageProps) {
             </div>
             {selectedDay && (
               <div className="cal-slots">
-                {slots.map((sl) => (
+                {slotsStatus === 'loading' && (
+                  <p className="t-muted" style={{ fontSize: 13 }}>{t.calendar.loadingSlots}</p>
+                )}
+                {slotsStatus === 'error' && (
+                  <p className="t-muted" style={{ fontSize: 13 }}>{t.calendar.errorSlots}</p>
+                )}
+                {slotsStatus === 'idle' && slots.length === 0 && (
+                  <p className="t-muted" style={{ fontSize: 13 }}>{t.calendar.noSlots}</p>
+                )}
+                {slotsStatus === 'idle' && slots.map((sl) => (
                   <button
                     key={sl}
                     type="button"
@@ -113,10 +213,38 @@ export default function ContactPage({ lang }: ContactPageProps) {
                 ))}
               </div>
             )}
+
             {selectedDay && selectedSlot && (
-              <button className="pill pill--solid" style={{ marginTop: 20 }}>
-                {t.calendlyCta} · {t.monthNames[month]} {selectedDay}, {selectedSlot}
-              </button>
+              <form className="cal-booking" onSubmit={submitBooking} style={{ marginTop: 20, display: 'flex', flexDirection: 'column', gap: 10 }}>
+                <p className="t-muted" style={{ fontSize: 13 }}>
+                  {t.calendlyCta} · {t.monthNames[month]} {selectedDay}, {selectedSlot}
+                </p>
+
+                <input className="field" type="text" placeholder={t.calendar.form.name} aria-label={t.calendar.form.name} required value={booking.name} onChange={setBookingField('name')} />
+                <input className="field" type="email" placeholder={t.calendar.form.email} aria-label={t.calendar.form.email} required value={booking.email} onChange={setBookingField('email')} />
+                <input className="field" type="tel" placeholder={t.calendar.form.phone} aria-label={t.calendar.form.phone} value={booking.phone} onChange={setBookingField('phone')} />
+                <textarea className="field" placeholder={t.calendar.form.note} aria-label={t.calendar.form.note} rows={2} value={booking.note} onChange={setBookingField('note')} />
+
+                <p className="t-muted" style={{ fontSize: 12 }}>{t.calendar.form.requiredHint}</p>
+
+                {bookingStatus === 'slot_taken' && (
+                  <p className="t-muted" style={{ fontSize: 12 }} role="alert">{t.calendar.slotTaken}</p>
+                )}
+                {bookingStatus === 'error' && (
+                  <p className="t-muted" style={{ fontSize: 12 }} role="alert">{t.calendar.form.error}</p>
+                )}
+
+                <button
+                  type="submit"
+                  className="pill pill--solid"
+                  disabled={bookingStatus === 'sending' || bookingStatus === 'sent'}
+                  aria-live="polite"
+                >
+                  {bookingStatus === 'sending' && t.calendar.form.sending}
+                  {bookingStatus === 'sent'    && `✓ ${t.calendar.form.sent}`}
+                  {(bookingStatus === 'idle' || bookingStatus === 'error' || bookingStatus === 'slot_taken') && t.calendar.form.submit}
+                </button>
+              </form>
             )}
           </div>
         </div>
@@ -137,10 +265,13 @@ export default function ContactPage({ lang }: ContactPageProps) {
             </select>
             <textarea className="field" placeholder={t.form.message} aria-label={t.form.message} rows={5} value={form.message} onChange={set('message')} />
             <button type="submit" className="contact__send" disabled={status === 'sending'}>
-              {status === 'idle'    && `${t.form.send} →`}
+              {(status === 'idle' || status === 'error') && `${t.form.send} →`}
               {status === 'sending' && t.form.sending}
               {status === 'sent'    && `✓ ${t.form.sent}`}
             </button>
+            {status === 'error' && (
+              <p className="t-muted" style={{ fontSize: 12, marginTop: 8 }} role="alert">{t.form.error}</p>
+            )}
           </form>
         </div>
       </section>
