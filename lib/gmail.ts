@@ -71,43 +71,6 @@ async function sendRaw(headers: string[], bodyLines: string[]): Promise<void> {
   });
 }
 
-export interface ContactPayload {
-  name: string;
-  email: string;
-  message: string;
-  phone?: string;
-  service?: string;
-}
-
-/**
- * Sends the contact form submission as an email to the studio's own inbox
- * (GMAIL_SENDER), with Reply-To set to the submitter so replying goes
- * straight to them.
- */
-export async function sendContactEmail(payload: ContactPayload): Promise<void> {
-  const { name, email, message, phone, service } = payload;
-  const sender = getSender();
-
-  const bodyLines = [
-    `Nombre: ${name}`,
-    `Correo: ${email}`,
-    phone ? `Teléfono: ${phone}` : null,
-    service ? `Servicio: ${service}` : null,
-    '',
-    message,
-  ].filter((line): line is string => line !== null);
-
-  await sendRaw(
-    [
-      `From: Latente Estudio <${sender}>`,
-      `To: ${sender}`,
-      `Reply-To: ${name} <${email}>`,
-      `Subject: ${encodeSubject(`Nuevo contacto · ${name}`)}`,
-    ],
-    bodyLines
-  );
-}
-
 export interface BookingEmailPayload {
   name: string;
   email: string;

@@ -2,14 +2,14 @@
 
 import { useEffect, useState } from 'react';
 import type { Lang } from '@/lib/types';
-import { COPY } from '@/lib/data';
+import { COPY, DIAL_CODES } from '@/lib/data';
 import FaceMascot from '@/components/FaceMascot';
 
 interface ContactPageProps {
   lang: Lang;
 }
 
-type FormStatus = 'idle' | 'sending' | 'sent' | 'error';
+type FormStatus = 'idle' | 'sending' | 'sent' | 'error' | 'invalid';
 type SlotsStatus = 'idle' | 'loading' | 'error';
 type BookingStatus = 'idle' | 'sending' | 'sent' | 'error' | 'slot_taken';
 
@@ -17,7 +17,7 @@ export default function ContactPage({ lang }: ContactPageProps) {
   const t = COPY[lang].contact;
   const services = COPY[lang].services.items;
 
-  const [form, setForm] = useState({ name: '', email: '', phone: '', service: '', message: '' });
+  const [form, setForm] = useState({ name: '', lastName: '', email: '', dialCode: '+57', phone: '', service: '', message: '' });
   const [status, setStatus] = useState<FormStatus>('idle');
   const [selectedDay, setSelectedDay] = useState<number | null>(null);
   const [selectedSlot, setSelectedSlot] = useState<string | null>(null);
@@ -40,7 +40,7 @@ export default function ContactPage({ lang }: ContactPageProps) {
 
   // Mini booking form — separate from the general contact form below,
   // only what's needed to create the calendar event and invite the guest.
-  const [booking, setBooking] = useState({ name: '', email: '', phone: '', note: '' });
+  const [booking, setBooking] = useState({ name: '', lastName: '', email: '', dialCode: '+57', phone: '', service: '', note: '' });
   const [bookingStatus, setBookingStatus] = useState<BookingStatus>('idle');
 
   const dateStrFor = (day: number) =>
@@ -79,6 +79,11 @@ export default function ContactPage({ lang }: ContactPageProps) {
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
+    // The browser's `required` accepts whitespace-only values; the API doesn't.
+    if (!form.name.trim() || !form.lastName.trim() || !form.email.trim() || !form.message.trim()) {
+      setStatus('invalid');
+      return;
+    }
     setStatus('sending');
     try {
       const res = await fetch('/api/contact', {
@@ -86,8 +91,10 @@ export default function ContactPage({ lang }: ContactPageProps) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           name: form.name,
+          lastName: form.lastName,
           email: form.email,
           message: form.message,
+          dialCode: form.dialCode,
           phone: form.phone || undefined,
           service: form.service || undefined,
         }),
@@ -105,7 +112,7 @@ export default function ContactPage({ lang }: ContactPageProps) {
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
     setForm({ ...form, [k]: e.target.value });
 
-  const setBookingField = (k: keyof typeof booking) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+  const setBookingField = (k: keyof typeof booking) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
     setBooking({ ...booking, [k]: e.target.value });
 
   const submitBooking = async (e: React.FormEvent) => {
@@ -118,10 +125,13 @@ export default function ContactPage({ lang }: ContactPageProps) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name:  booking.name,
-          email: booking.email,
-          phone: booking.phone || undefined,
-          note:  booking.note || undefined,
+          name:     booking.name,
+          lastName: booking.lastName,
+          email:    booking.email,
+          dialCode: booking.dialCode,
+          phone:    booking.phone || undefined,
+          service:  booking.service || undefined,
+          note:     booking.note || undefined,
           date:  dateStrFor(selectedDay),
           slot:  selectedSlot,
         }),
@@ -221,8 +231,22 @@ export default function ContactPage({ lang }: ContactPageProps) {
                 </p>
 
                 <input className="field" type="text" placeholder={t.calendar.form.name} aria-label={t.calendar.form.name} required value={booking.name} onChange={setBookingField('name')} />
+                <input className="field" type="text" placeholder={t.calendar.form.lastName} aria-label={t.calendar.form.lastName} required value={booking.lastName} onChange={setBookingField('lastName')} />
                 <input className="field" type="email" placeholder={t.calendar.form.email} aria-label={t.calendar.form.email} required value={booking.email} onChange={setBookingField('email')} />
-                <input className="field" type="tel" placeholder={t.calendar.form.phone} aria-label={t.calendar.form.phone} value={booking.phone} onChange={setBookingField('phone')} />
+                <div className="field-phone">
+                  <select className="field" aria-label={t.calendar.form.dialCode} value={booking.dialCode} onChange={setBookingField('dialCode')}>
+                    {DIAL_CODES.map((d) => (
+                      <option key={d.code} value={d.code}>{d.country} {d.code}</option>
+                    ))}
+                  </select>
+                  <input className="field" type="tel" placeholder={t.calendar.form.phone} aria-label={t.calendar.form.phone} value={booking.phone} onChange={setBookingField('phone')} />
+                </div>
+                <select className="field" aria-label={t.calendar.form.service} value={booking.service} onChange={setBookingField('service')}>
+                  <option value="">{t.calendar.form.service}</option>
+                  {services.map((sv) => (
+                    <option key={sv.id} value={sv.id}>{sv.t}</option>
+                  ))}
+                </select>
                 <textarea className="field" placeholder={t.calendar.form.note} aria-label={t.calendar.form.note} rows={2} value={booking.note} onChange={setBookingField('note')} />
 
                 <p className="t-muted" style={{ fontSize: 12 }}>{t.calendar.form.requiredHint}</p>
@@ -251,24 +275,38 @@ export default function ContactPage({ lang }: ContactPageProps) {
 
         <div className="contact__row" id="contact-form">
           <h2 className="contact__form-title">{t.heroCta}</h2>
-          <form className="contact__form" onSubmit={submit} noValidate>
+          <form className="contact__form" onSubmit={submit}>
             <div className="contact__form-pair">
-              <input className="field" type="email" placeholder={t.form.email} aria-label={t.form.email} required value={form.email} onChange={set('email')} />
-              <input className="field" type="tel" placeholder={t.form.phone} aria-label={t.form.phone} value={form.phone} onChange={set('phone')} />
+              <input className="field" type="text" placeholder={t.form.name} aria-label={t.form.name} required value={form.name} onChange={set('name')} />
+              <input className="field" type="text" placeholder={t.form.lastName} aria-label={t.form.lastName} required value={form.lastName} onChange={set('lastName')} />
             </div>
-            <input className="field" type="text" placeholder={t.form.name} aria-label={t.form.name} required value={form.name} onChange={set('name')} />
+            <div className="contact__form-pair">
+              <div className="field-phone">
+                <select className="field" aria-label={t.form.dialCode} value={form.dialCode} onChange={set('dialCode')}>
+                  {DIAL_CODES.map((d) => (
+                    <option key={d.code} value={d.code}>{d.country} {d.code}</option>
+                  ))}
+                </select>
+                <input className="field" type="tel" placeholder={t.form.phone} aria-label={t.form.phone} value={form.phone} onChange={set('phone')} />
+              </div>
+              <input className="field" type="email" placeholder={t.form.email} aria-label={t.form.email} required value={form.email} onChange={set('email')} />
+            </div>
             <select className="field" aria-label={t.form.service} value={form.service} onChange={set('service')}>
               <option value="">{t.form.service}</option>
               {services.map((sv) => (
                 <option key={sv.id} value={sv.id}>{sv.t}</option>
               ))}
             </select>
-            <textarea className="field" placeholder={t.form.message} aria-label={t.form.message} rows={5} value={form.message} onChange={set('message')} />
-            <button type="submit" className="contact__send" disabled={status === 'sending'}>
-              {(status === 'idle' || status === 'error') && `${t.form.send} →`}
+            <textarea className="field" placeholder={t.form.message} aria-label={t.form.message} required rows={5} value={form.message} onChange={set('message')} />
+            <p className="t-muted" style={{ fontSize: 12 }}>{t.form.requiredHint}</p>
+            <button type="submit" className="contact__send" disabled={status === 'sending' || status === 'sent'}>
+              {(status === 'idle' || status === 'error' || status === 'invalid') && `${t.form.send} →`}
               {status === 'sending' && t.form.sending}
               {status === 'sent'    && `✓ ${t.form.sent}`}
             </button>
+            {status === 'invalid' && (
+              <p className="t-muted" style={{ fontSize: 12, marginTop: 8 }} role="alert">{t.form.requiredHint}</p>
+            )}
             {status === 'error' && (
               <p className="t-muted" style={{ fontSize: 12, marginTop: 8 }} role="alert">{t.form.error}</p>
             )}

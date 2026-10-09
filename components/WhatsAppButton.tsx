@@ -3,8 +3,9 @@
 const DEFAULT_MESSAGE = 'Hola, me gustaria recibir información sobre ';
 
 export default function WhatsAppButton() {
+  const disabled = process.env.NEXT_PUBLIC_WHATSAPP_BUTTON_DISABLED === 'TRUE';
   const rawNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
-  if (!rawNumber) return null;
+  if (disabled || !rawNumber) return null;
 
   const digits = rawNumber.replace(/\D/g, '');
   const href = `https://wa.me/${digits}?text=${encodeURIComponent(DEFAULT_MESSAGE)}`;

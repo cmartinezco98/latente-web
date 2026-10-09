@@ -601,7 +601,7 @@ main:has(.about-intro) + .site-footer, main:has(.home-dark-zone) + .site-footer 
 }
 
 .back-to-top {
-  position: fixed; right: 24px; bottom: 24px; z-index: 30;
+  position: fixed; right: 24px; bottom: 90px; z-index: 30;
   display: inline-flex; align-items: center; gap: 8px;
   padding: 10px 18px; border-radius: var(--r-pill);
   border: 1px solid var(--fg); background: var(--bg);
@@ -609,6 +609,18 @@ main:has(.about-intro) + .site-footer, main:has(.home-dark-zone) + .site-footer 
   opacity: 0; pointer-events: none; transition: opacity 280ms var(--ease-out);
 }
 .back-to-top.is-on { opacity: 1; pointer-events: auto; }
+
+.whatsapp-float {
+  position: fixed; right: 24px; bottom: 24px; z-index: 40;
+  width: 56px; height: 56px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: #25D366; color: #FFFFFF;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+  transition: transform 220ms var(--ease-out), box-shadow 220ms var(--ease-out);
+}
+.whatsapp-float:hover { transform: translateY(-3px); box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28); }
+@media (prefers-reduced-motion: reduce) { .whatsapp-float { transition: none; } .whatsapp-float:hover { transform: none; } }
+@media (max-width: 640px) { .whatsapp-float { right: 16px; bottom: 16px; width: 50px; height: 50px; } }
 
 /* === SERVICES === */
 .services { padding-block: clamp(16px, 2.6vw, 32px); background: var(--bg); color: var(--fg); }
@@ -806,6 +818,7 @@ main:has(.about-intro) + .site-footer, main:has(.home-dark-zone) + .site-footer 
 .contact__form-title { font-size: clamp(26px, 2.8vw, 40px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; }
 .contact__form { display: flex; flex-direction: column; gap: 14px; }
 .contact__form-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.field-phone { display: grid; grid-template-columns: 8.5rem 1fr; gap: 8px; }
 .field {
   width: 100%; background: var(--lime); color: var(--ink);
   border: 2px solid transparent; outline: none; font: inherit; font-size: 15px;
