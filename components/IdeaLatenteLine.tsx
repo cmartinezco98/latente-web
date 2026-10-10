@@ -46,7 +46,7 @@ export default function IdeaLatenteLine({ text, folder, count = 6, hoverColor }:
         {Array.from({ length: count }).map((_, i) => (
           <Image
             key={i}
-            src={`${folder}/${i + 1}.png`}
+            src={`${folder}/${i + 1}.webp`}
             alt=""
             fill
             sizes="280px"

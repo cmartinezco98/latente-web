@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
-const PHOTOS = Array.from({ length: 10 }, (_, i) => `/assets/nosotros/team-${i + 1}.jpg`);
+const PHOTOS = Array.from({ length: 10 }, (_, i) => `/assets/nosotros/team-${i + 1}.webp`);
 
 export default function AboutPhotoRotator() {
   const [index, setIndex] = useState(0);

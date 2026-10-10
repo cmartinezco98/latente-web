@@ -549,7 +549,7 @@ export const PROJECTS: Project[] = [
     cats: ['branding', 'illustration'],
     catsLabel: { es: 'Branding · Ilustración', en: 'Branding · Illustration' },
     summary:   { es: 'Identidad de marca para Entre Nubes.', en: 'Brand identity for Entre Nubes.' },
-    cover: '/assets/portfolio/galeria/01-entre-nubes.png',
+    cover: '/assets/portfolio/galeria/01-entre-nubes.webp',
     aspect: '1440/602', accent: '#7972FA',
     detail: {
       paragraphs: {
@@ -563,9 +563,9 @@ export const PROJECTS: Project[] = [
         ],
       },
       blocks: [
-        { type: 'full', images: ['/assets/portfolio/entre-nubes/logo-lockup.png'] },
-        { type: 'pair', images: ['/assets/portfolio/entre-nubes/logo-cream.png', '/assets/portfolio/entre-nubes/tote-bag.png'] },
-        { type: 'pair', images: ['/assets/portfolio/entre-nubes/door-hanger.png', '/assets/portfolio/entre-nubes/website-mockup.png'] },
+        { type: 'full', images: ['/assets/portfolio/entre-nubes/logo-lockup.webp'] },
+        { type: 'pair', images: ['/assets/portfolio/entre-nubes/logo-cream.webp', '/assets/portfolio/entre-nubes/tote-bag.webp'] },
+        { type: 'pair', images: ['/assets/portfolio/entre-nubes/door-hanger.webp', '/assets/portfolio/entre-nubes/website-mockup.webp'] },
       ],
     },
   },
@@ -577,7 +577,7 @@ export const PROJECTS: Project[] = [
     cats: ['product', 'photo'],
     catsLabel: { es: 'Producto · Fotografía', en: 'Product · Photography' },
     summary:   { es: 'Diseño de producto y fotografía para Tanto y más.', en: 'Product design and photography for Tanto y más.' },
-    cover: '/assets/portfolio/galeria/02-tanto-y-mas.png',
+    cover: '/assets/portfolio/galeria/02-tanto-y-mas.webp',
     aspect: '660/459', accent: '#DE5738',
     detail: {
       paragraphs: {
@@ -591,10 +591,10 @@ export const PROJECTS: Project[] = [
         ],
       },
       blocks: [
-        { type: 'full', images: ['/assets/portfolio/tanto-y-mas/1.png'] },
-        { type: 'pair', images: ['/assets/portfolio/tanto-y-mas/2.png', '/assets/portfolio/tanto-y-mas/3.png'] },
-        { type: 'pair', images: ['/assets/portfolio/tanto-y-mas/4.png', '/assets/portfolio/tanto-y-mas/5.png'] },
-        { type: 'pair', images: ['/assets/portfolio/tanto-y-mas/6.png', '/assets/portfolio/tanto-y-mas/7.png'] },
+        { type: 'full', images: ['/assets/portfolio/tanto-y-mas/1.webp'] },
+        { type: 'pair', images: ['/assets/portfolio/tanto-y-mas/2.webp', '/assets/portfolio/tanto-y-mas/3.webp'] },
+        { type: 'pair', images: ['/assets/portfolio/tanto-y-mas/4.webp', '/assets/portfolio/tanto-y-mas/5.webp'] },
+        { type: 'pair', images: ['/assets/portfolio/tanto-y-mas/6.webp', '/assets/portfolio/tanto-y-mas/7.webp'] },
       ],
     },
   },
@@ -606,7 +606,7 @@ export const PROJECTS: Project[] = [
     cats: ['branding', 'photo', 'illustration'],
     catsLabel: { es: 'Branding · Fotografía · Ilustración', en: 'Branding · Photography · Illustration' },
     summary:   { es: 'Identidad y contenido de marca para La Enoteca de Dani.', en: 'Brand identity and content for La Enoteca de Dani.' },
-    cover: '/assets/portfolio/galeria/03-la-enoteca-de-dani.png',
+    cover: '/assets/portfolio/galeria/03-la-enoteca-de-dani.webp',
     gridSize: 'size-full',
     aspect: '1/1', accent: '#EDFB8C',
     detail: {
@@ -621,11 +621,11 @@ export const PROJECTS: Project[] = [
         ],
       },
       blocks: [
-        { type: 'triple', images: ['/assets/portfolio/enoteca-dani/1.png', '/assets/portfolio/enoteca-dani/2.png', '/assets/portfolio/enoteca-dani/3.png'] },
-        { type: 'triple', images: ['/assets/portfolio/enoteca-dani/4.png', '/assets/portfolio/enoteca-dani/5.png', '/assets/portfolio/enoteca-dani/6.png'] },
-        { type: 'full', images: ['/assets/portfolio/enoteca-dani/7.png'] },
-        { type: 'pair', images: ['/assets/portfolio/enoteca-dani/8.png', '/assets/portfolio/enoteca-dani/9.png'] },
-        { type: 'pair', images: ['/assets/portfolio/enoteca-dani/10.png', '/assets/portfolio/enoteca-dani/11.png'] },
+        { type: 'triple', images: ['/assets/portfolio/enoteca-dani/1.webp', '/assets/portfolio/enoteca-dani/2.webp', '/assets/portfolio/enoteca-dani/3.webp'] },
+        { type: 'triple', images: ['/assets/portfolio/enoteca-dani/4.webp', '/assets/portfolio/enoteca-dani/5.webp', '/assets/portfolio/enoteca-dani/6.webp'] },
+        { type: 'full', images: ['/assets/portfolio/enoteca-dani/7.webp'] },
+        { type: 'pair', images: ['/assets/portfolio/enoteca-dani/8.webp', '/assets/portfolio/enoteca-dani/9.webp'] },
+        { type: 'pair', images: ['/assets/portfolio/enoteca-dani/10.webp', '/assets/portfolio/enoteca-dani/11.webp'] },
       ],
     },
   },
@@ -637,7 +637,7 @@ export const PROJECTS: Project[] = [
     cats: ['editorial', 'product'],
     catsLabel: { es: 'Editorial · Producto', en: 'Editorial · Product' },
     summary:   { es: 'Diagramación y diseño editorial de Revista Índice.', en: 'Layout and editorial design for Índice Magazine.' },
-    cover: '/assets/portfolio/galeria/04-revista-indice.png',
+    cover: '/assets/portfolio/galeria/04-revista-indice.webp',
     gridSize: { all: 'size-half' },
     aspect: '1327/1024', accent: '#DCD0FC',
     detail: {
@@ -652,8 +652,8 @@ export const PROJECTS: Project[] = [
         ],
       },
       blocks: [
-        { type: 'full', images: ['/assets/portfolio/revista-indice/1.png'] },
-        { type: 'full', images: ['/assets/portfolio/revista-indice/2.png'] },
+        { type: 'full', images: ['/assets/portfolio/revista-indice/1.webp'] },
+        { type: 'full', images: ['/assets/portfolio/revista-indice/2.webp'] },
       ],
     },
   },
@@ -665,7 +665,7 @@ export const PROJECTS: Project[] = [
     cats: ['branding', 'illustration'],
     catsLabel: { es: 'Branding · Ilustración', en: 'Branding · Illustration' },
     summary:   { es: 'Ilustración y publicidad para Gualé.', en: 'Illustration and advertising for Gualé.' },
-    cover: '/assets/portfolio/galeria/05-guale.png',
+    cover: '/assets/portfolio/galeria/05-guale.webp',
     gridSize: { all: 'size-half', branding: 'size-half' },
     aspect: '429/553', accent: '#7972FA',
     detail: {
@@ -680,11 +680,11 @@ export const PROJECTS: Project[] = [
         ],
       },
       blocks: [
-        { type: 'triple', images: ['/assets/portfolio/guale/1.png', '/assets/portfolio/guale/2.png', '/assets/portfolio/guale/3.png'] },
-        { type: 'full', images: ['/assets/portfolio/guale/4.png'] },
-        { type: 'pair', images: ['/assets/portfolio/guale/5.png', '/assets/portfolio/guale/9.png'] },
-        { type: 'pair', images: ['/assets/portfolio/guale/6.png', '/assets/portfolio/guale/7.png'] },
-        { type: 'full', images: ['/assets/portfolio/guale/8.png'] },
+        { type: 'triple', images: ['/assets/portfolio/guale/1.webp', '/assets/portfolio/guale/2.webp', '/assets/portfolio/guale/3.webp'] },
+        { type: 'full', images: ['/assets/portfolio/guale/4.webp'] },
+        { type: 'pair', images: ['/assets/portfolio/guale/5.webp', '/assets/portfolio/guale/9.webp'] },
+        { type: 'pair', images: ['/assets/portfolio/guale/6.webp', '/assets/portfolio/guale/7.webp'] },
+        { type: 'full', images: ['/assets/portfolio/guale/8.webp'] },
       ],
     },
   },
@@ -696,7 +696,7 @@ export const PROJECTS: Project[] = [
     cats: ['photo', 'branding', 'content', 'social'],
     catsLabel: { es: 'Fotografía · Branding · Creación de contenido · Social Media', en: 'Photography · Branding · Content Creation · Social Media' },
     summary:   { es: 'Identidad pop con script retro para Alana.', en: 'Pop identity with retro script for Alana.' },
-    cover: '/assets/portfolio/galeria/06-alana.png',
+    cover: '/assets/portfolio/galeria/06-alana.webp',
     gridSize: { branding: 'size-half' },
     aspect: '1440/602', accent: '#DE5738',
     detail: {
@@ -711,36 +711,36 @@ export const PROJECTS: Project[] = [
         ],
       },
       blocks: [
-        { type: 'full', images: ['/assets/portfolio/alana/1.png'], aspect: '1323/960' },
+        { type: 'full', images: ['/assets/portfolio/alana/1.webp'], aspect: '1323/960' },
         {
           type: 'carousel',
           images: [
-            '/assets/portfolio/alana/carrusel/1.png',
-            '/assets/portfolio/alana/carrusel/2.png',
-            '/assets/portfolio/alana/carrusel/3.png',
-            '/assets/portfolio/alana/carrusel/4.png',
-            '/assets/portfolio/alana/carrusel/5.png',
-            '/assets/portfolio/alana/carrusel/6.png',
+            '/assets/portfolio/alana/carrusel/1.webp',
+            '/assets/portfolio/alana/carrusel/2.webp',
+            '/assets/portfolio/alana/carrusel/3.webp',
+            '/assets/portfolio/alana/carrusel/4.webp',
+            '/assets/portfolio/alana/carrusel/5.webp',
+            '/assets/portfolio/alana/carrusel/6.webp',
           ],
-          bg: '/assets/portfolio/alana/carrusel/fondo.png',
+          bg: '/assets/portfolio/alana/carrusel/fondo.webp',
         },
         {
           type: 'mosaic3',
           images: [
-            '/assets/portfolio/alana/2.png',
-            '/assets/portfolio/alana/3.png',
-            '/assets/portfolio/alana/5.png',
-            '/assets/portfolio/alana/4.png',
-            '/assets/portfolio/alana/6.png',
+            '/assets/portfolio/alana/2.webp',
+            '/assets/portfolio/alana/3.webp',
+            '/assets/portfolio/alana/5.webp',
+            '/assets/portfolio/alana/4.webp',
+            '/assets/portfolio/alana/6.webp',
           ],
           aspects: ['514/911', '352/352', '360/530', '388/507', '388/388'],
         },
         {
           type: 'triple',
           images: [
-            '/assets/portfolio/alana/7.png',
-            '/assets/portfolio/alana/8.png',
-            '/assets/portfolio/alana/9.png',
+            '/assets/portfolio/alana/7.webp',
+            '/assets/portfolio/alana/8.webp',
+            '/assets/portfolio/alana/9.webp',
           ],
         },
       ],
@@ -754,7 +754,7 @@ export const PROJECTS: Project[] = [
     cats: ['branding', 'illustration', 'product'],
     catsLabel: { es: 'Branding · Ilustración · Producto', en: 'Branding · Illustration · Product' },
     summary:   { es: 'Identidad e ilustración para Güin Güino.', en: 'Identity and illustration for Güin Güino.' },
-    cover: '/assets/portfolio/galeria/07-guin-guino.png',
+    cover: '/assets/portfolio/galeria/07-guin-guino.webp',
     gridSize: { branding: 'size-half' },
     aspect: '651/851', accent: '#EDFB8C',
     detail: {
@@ -769,9 +769,9 @@ export const PROJECTS: Project[] = [
         ],
       },
       blocks: [
-        { type: 'pair', images: ['/assets/portfolio/guin-guino/1.png', '/assets/portfolio/guin-guino/2.png'] },
-        { type: 'pair', images: ['/assets/portfolio/guin-guino/3.png', '/assets/portfolio/guin-guino/4.png'] },
-        { type: 'full', images: ['/assets/portfolio/guin-guino/cabecera.png'] },
+        { type: 'pair', images: ['/assets/portfolio/guin-guino/1.webp', '/assets/portfolio/guin-guino/2.webp'] },
+        { type: 'pair', images: ['/assets/portfolio/guin-guino/3.webp', '/assets/portfolio/guin-guino/4.webp'] },
+        { type: 'full', images: ['/assets/portfolio/guin-guino/cabecera.webp'] },
       ],
     },
   },
@@ -783,7 +783,7 @@ export const PROJECTS: Project[] = [
     cats: ['branding', 'illustration'],
     catsLabel: { es: 'Branding · Ilustración', en: 'Branding · Illustration' },
     summary:   { es: 'Identidad y contenido de marca para Nuggets & Fries.', en: 'Brand identity and content for Nuggets & Fries.' },
-    cover: '/assets/portfolio/galeria/08-nuggets-fries.png',
+    cover: '/assets/portfolio/galeria/08-nuggets-fries.webp',
     gridSize: { branding: 'size-half' },
     aspect: '699/903', accent: '#DCD0FC',
     detail: {
@@ -798,23 +798,23 @@ export const PROJECTS: Project[] = [
         ],
       },
       blocks: [
-        { type: 'full', images: ['/assets/portfolio/nuggets-fries/1.png'], aspect: '1327/884' },
+        { type: 'full', images: ['/assets/portfolio/nuggets-fries/1.webp'], aspect: '1327/884' },
         {
           type: 'duoStack',
           images: [
-            '/assets/portfolio/nuggets-fries/2.png',
-            '/assets/portfolio/nuggets-fries/3.png',
-            '/assets/portfolio/nuggets-fries/4.png',
+            '/assets/portfolio/nuggets-fries/2.webp',
+            '/assets/portfolio/nuggets-fries/3.webp',
+            '/assets/portfolio/nuggets-fries/4.webp',
           ],
           aspects: ['699/903', '593/494', '596/379'],
         },
-        { type: 'full', images: ['/assets/portfolio/nuggets-fries/5.png'], aspect: '1327/986' },
+        { type: 'full', images: ['/assets/portfolio/nuggets-fries/5.webp'], aspect: '1327/986' },
         {
           type: 'triple',
           images: [
-            '/assets/portfolio/nuggets-fries/6.png',
-            '/assets/portfolio/nuggets-fries/7.png',
-            '/assets/portfolio/nuggets-fries/8.png',
+            '/assets/portfolio/nuggets-fries/6.webp',
+            '/assets/portfolio/nuggets-fries/7.webp',
+            '/assets/portfolio/nuggets-fries/8.webp',
           ],
         },
       ],
@@ -828,7 +828,7 @@ export const PROJECTS: Project[] = [
     cats: ['illustration', 'product'],
     catsLabel: { es: 'Ilustración · Producto', en: 'Illustration · Product' },
     summary:   { es: 'Tarot ilustrado para constelaciones familiares.', en: 'Illustrated tarot deck for family constellations.' },
-    cover: '/assets/portfolio/galeria/09-moriras.png',
+    cover: '/assets/portfolio/galeria/09-moriras.webp',
     aspect: '604/416', accent: '#7972FA',
     detail: {
       paragraphs: {
@@ -842,13 +842,13 @@ export const PROJECTS: Project[] = [
         ],
       },
       blocks: [
-        { type: 'full', images: ['/assets/portfolio/moiras/1.png'], aspect: '1326/884' },
+        { type: 'full', images: ['/assets/portfolio/moiras/1.webp'], aspect: '1326/884' },
         {
           type: 'duoStack',
           images: [
-            '/assets/portfolio/moiras/2.png',
-            '/assets/portfolio/moiras/3.png',
-            '/assets/portfolio/moiras/4.png',
+            '/assets/portfolio/moiras/2.webp',
+            '/assets/portfolio/moiras/3.webp',
+            '/assets/portfolio/moiras/4.webp',
           ],
           aspects: ['664/878', '608/405', '604/416'],
         },
@@ -863,7 +863,7 @@ export const PROJECTS: Project[] = [
     cats: ['editorial', 'product'],
     catsLabel: { es: 'Editorial · Producto', en: 'Editorial · Product' },
     summary:   { es: 'Diseño editorial y fotografía para Revista Camino a China.', en: 'Editorial design and photography for Camino a China Magazine.' },
-    cover: '/assets/portfolio/galeria/10-revista-camino-a-china.png',
+    cover: '/assets/portfolio/galeria/10-revista-camino-a-china.webp',
     aspect: '650/520', accent: '#DE5738',
     detail: {
       paragraphs: {
@@ -880,11 +880,11 @@ export const PROJECTS: Project[] = [
         {
           type: 'pair',
           images: [
-            '/assets/portfolio/revista-camino-a-china/1.png',
-            '/assets/portfolio/revista-camino-a-china/2.png',
+            '/assets/portfolio/revista-camino-a-china/1.webp',
+            '/assets/portfolio/revista-camino-a-china/2.webp',
           ],
         },
-        { type: 'full', images: ['/assets/portfolio/revista-camino-a-china/3.png'], aspect: '1327/995' },
+        { type: 'full', images: ['/assets/portfolio/revista-camino-a-china/3.webp'], aspect: '1327/995' },
       ],
     },
   },
@@ -896,7 +896,7 @@ export const PROJECTS: Project[] = [
     cats: ['editorial'],
     catsLabel: { es: 'Diseño editorial', en: 'Editorial design' },
     summary:   { es: 'Identidad de marca para Lovely.', en: 'Brand identity for Lovely.' },
-    cover: '/assets/portfolio/galeria/11-lovely.png',
+    cover: '/assets/portfolio/galeria/11-lovely.webp',
     aspect: '645/967', accent: '#EDFB8C',
     detail: {
       paragraphs: {
@@ -910,39 +910,39 @@ export const PROJECTS: Project[] = [
         ],
       },
       blocks: [
-        { type: 'full', images: ['/assets/portfolio/lovely/1.png'], aspect: '1327/556' },
+        { type: 'full', images: ['/assets/portfolio/lovely/1.webp'], aspect: '1327/556' },
         {
           type: 'strip',
           images: [
-            '/assets/portfolio/lovely/2.png',
-            '/assets/portfolio/lovely/3.png',
-            '/assets/portfolio/lovely/4.png',
-            '/assets/portfolio/lovely/5.png',
-            '/assets/portfolio/lovely/6.png',
-            '/assets/portfolio/lovely/7.png',
+            '/assets/portfolio/lovely/2.webp',
+            '/assets/portfolio/lovely/3.webp',
+            '/assets/portfolio/lovely/4.webp',
+            '/assets/portfolio/lovely/5.webp',
+            '/assets/portfolio/lovely/6.webp',
+            '/assets/portfolio/lovely/7.webp',
           ],
         },
         {
           type: 'pair',
-          images: ['/assets/portfolio/lovely/8.png', '/assets/portfolio/lovely/9.png'],
+          images: ['/assets/portfolio/lovely/8.webp', '/assets/portfolio/lovely/9.webp'],
           aspects: ['659/1705', '640/1705'],
         },
         {
           type: 'strip',
           images: [
-            '/assets/portfolio/lovely/10.png',
-            '/assets/portfolio/lovely/11.png',
-            '/assets/portfolio/lovely/12.png',
-            '/assets/portfolio/lovely/13.png',
-            '/assets/portfolio/lovely/14.png',
+            '/assets/portfolio/lovely/10.webp',
+            '/assets/portfolio/lovely/11.webp',
+            '/assets/portfolio/lovely/12.webp',
+            '/assets/portfolio/lovely/13.webp',
+            '/assets/portfolio/lovely/14.webp',
           ],
         },
         {
           type: 'pair',
-          images: ['/assets/portfolio/lovely/15.png', '/assets/portfolio/lovely/16.png'],
+          images: ['/assets/portfolio/lovely/15.webp', '/assets/portfolio/lovely/16.webp'],
           aspects: ['645/967', '644/967'],
         },
-        { type: 'full', images: ['/assets/portfolio/lovely/17.png'], aspect: '1312/1722' },
+        { type: 'full', images: ['/assets/portfolio/lovely/17.webp'], aspect: '1312/1722' },
       ],
     },
   },
@@ -954,7 +954,7 @@ export const PROJECTS: Project[] = [
     cats: ['social'],
     catsLabel: { es: 'Social Media', en: 'Social Media' },
     summary:   { es: 'Identidad visual y contenido de redes para Índice de mi país.', en: 'Visual identity and social content for Índice de mi país.' },
-    cover: '/assets/portfolio/galeria/12-indice.png',
+    cover: '/assets/portfolio/galeria/12-indice.webp',
     aspect: '424/530', accent: '#DCD0FC',
     detail: {
       paragraphs: {
@@ -970,19 +970,19 @@ export const PROJECTS: Project[] = [
       blocks: [
         {
           type: 'pair',
-          images: ['/assets/portfolio/indice/1.png', '/assets/portfolio/indice/2.png'],
+          images: ['/assets/portfolio/indice/1.webp', '/assets/portfolio/indice/2.webp'],
           aspects: ['653/816', '653/816'],
         },
-        { type: 'full', images: ['/assets/portfolio/indice/3.png'], aspect: '1327/1107' },
-        { type: 'full', images: ['/assets/portfolio/indice/4.png'], aspect: '1327/1659' },
-        { type: 'full', images: ['/assets/portfolio/indice/5.png'], aspect: '784/651' },
-        { type: 'full', images: ['/assets/portfolio/indice/6.png'], aspect: '519/650' },
+        { type: 'full', images: ['/assets/portfolio/indice/3.webp'], aspect: '1327/1107' },
+        { type: 'full', images: ['/assets/portfolio/indice/4.webp'], aspect: '1327/1659' },
+        { type: 'full', images: ['/assets/portfolio/indice/5.webp'], aspect: '784/651' },
+        { type: 'full', images: ['/assets/portfolio/indice/6.webp'], aspect: '519/650' },
         {
           type: 'triple',
           images: [
-            '/assets/portfolio/indice/7.png',
-            '/assets/portfolio/indice/8.png',
-            '/assets/portfolio/indice/9.png',
+            '/assets/portfolio/indice/7.webp',
+            '/assets/portfolio/indice/8.webp',
+            '/assets/portfolio/indice/9.webp',
           ],
           aspects: ['424/530', '424/530', '424/530'],
         },
@@ -997,9 +997,9 @@ export const PROJECTS: Project[] = [
     cats: ['social', 'photo', 'content'],
     catsLabel: { es: 'Social Media · Fotografía · Creación de contenido', en: 'Social Media · Photography · Content Creation' },
     summary:   { es: 'Identidad de marca y fotografía de producto para MieliFlora.', en: 'Brand identity and product photography for MieliFlora.' },
-    cover: '/assets/portfolio/galeria/13-mieliflora.png',
+    cover: '/assets/portfolio/galeria/13-mieliflora.webp',
     aspect: '1440/604', accent: '#7972FA',
-    heroImage: '/assets/portfolio/mieliflora/cabecera.png',
+    heroImage: '/assets/portfolio/mieliflora/cabecera.webp',
     detail: {
       paragraphs: {
         es: [
@@ -1012,24 +1012,24 @@ export const PROJECTS: Project[] = [
         ],
       },
       blocks: [
-        { type: 'full', images: ['/assets/portfolio/mieliflora/1.png'], aspect: '1325/1193' },
+        { type: 'full', images: ['/assets/portfolio/mieliflora/1.webp'], aspect: '1325/1193' },
         { type: 'triple', images: [
-            '/assets/portfolio/mieliflora/2.png',
-            '/assets/portfolio/mieliflora/3.png',
-            '/assets/portfolio/mieliflora/4.png',
+            '/assets/portfolio/mieliflora/2.webp',
+            '/assets/portfolio/mieliflora/3.webp',
+            '/assets/portfolio/mieliflora/4.webp',
           ], aspects: ['421/527', '422/527', '422/527'] },
         { type: 'triple', images: [
-            '/assets/portfolio/mieliflora/5.png',
-            '/assets/portfolio/mieliflora/6.png',
-            '/assets/portfolio/mieliflora/7.png',
+            '/assets/portfolio/mieliflora/5.webp',
+            '/assets/portfolio/mieliflora/6.webp',
+            '/assets/portfolio/mieliflora/7.webp',
           ], aspects: ['421/526', '422/527', '421/526'] },
-        { type: 'full', images: ['/assets/portfolio/mieliflora/8.png'], aspect: '1327/1194' },
+        { type: 'full', images: ['/assets/portfolio/mieliflora/8.webp'], aspect: '1327/1194' },
         { type: 'quadStack', images: [
             '/assets/portfolio/mieliflora/9.mp4',
-            '/assets/portfolio/mieliflora/10.png',
-            '/assets/portfolio/mieliflora/11.png',
-            '/assets/portfolio/mieliflora/12.png',
-            '/assets/portfolio/mieliflora/13.png',
+            '/assets/portfolio/mieliflora/10.webp',
+            '/assets/portfolio/mieliflora/11.webp',
+            '/assets/portfolio/mieliflora/12.webp',
+            '/assets/portfolio/mieliflora/13.webp',
           ], aspects: ['1440/2560', '365/462', '2430/3038', '2430/3038', '366/459'] },
       ],
     },
@@ -1042,9 +1042,9 @@ export const PROJECTS: Project[] = [
     cats: ['editorial', 'photo'],
     catsLabel: { es: 'Editorial · Fotografía', en: 'Editorial · Photography' },
     summary:   { es: 'Editorial y fotografía para el libro Artistas y pandemia.', en: 'Editorial design and photography for the book Artistas y pandemia.' },
-    cover: '/assets/portfolio/galeria/14-artistas-y-pandemia.png',
+    cover: '/assets/portfolio/galeria/14-artistas-y-pandemia.webp',
     aspect: '1329/997', accent: '#DE5738',
-    heroImage: '/assets/portfolio/artistas-y-pandemia/cabecera.png',
+    heroImage: '/assets/portfolio/artistas-y-pandemia/cabecera.webp',
     detail: {
       paragraphs: {
         es: [
@@ -1060,23 +1060,23 @@ export const PROJECTS: Project[] = [
         {
           type: 'duoStack',
           images: [
-            '/assets/portfolio/artistas-y-pandemia/2.png',
-            '/assets/portfolio/artistas-y-pandemia/1.png',
-            '/assets/portfolio/artistas-y-pandemia/3.png',
+            '/assets/portfolio/artistas-y-pandemia/2.webp',
+            '/assets/portfolio/artistas-y-pandemia/1.webp',
+            '/assets/portfolio/artistas-y-pandemia/3.webp',
           ],
           aspects: ['656/987', '638/479', '639/479'],
         },
-        { type: 'full', images: ['/assets/portfolio/artistas-y-pandemia/4.png'], aspect: '1327/995' },
+        { type: 'full', images: ['/assets/portfolio/artistas-y-pandemia/4.webp'], aspect: '1327/995' },
         {
           type: 'strip',
           images: [
-            '/assets/portfolio/artistas-y-pandemia/5.png',
-            '/assets/portfolio/artistas-y-pandemia/6.png',
-            '/assets/portfolio/artistas-y-pandemia/7.png',
-            '/assets/portfolio/artistas-y-pandemia/8.png',
+            '/assets/portfolio/artistas-y-pandemia/5.webp',
+            '/assets/portfolio/artistas-y-pandemia/6.webp',
+            '/assets/portfolio/artistas-y-pandemia/7.webp',
+            '/assets/portfolio/artistas-y-pandemia/8.webp',
           ],
         },
-        { type: 'full', images: ['/assets/portfolio/artistas-y-pandemia/9.png'], aspect: '1329/997' },
+        { type: 'full', images: ['/assets/portfolio/artistas-y-pandemia/9.webp'], aspect: '1329/997' },
       ],
     },
   },
@@ -1088,9 +1088,9 @@ export const PROJECTS: Project[] = [
     cats: ['branding', 'naming', 'video', 'illustration', 'social'],
     catsLabel: { es: 'Branding · Naming · Animación · Ilustración · Social Media', en: 'Branding · Naming · Animation · Illustration · Social Media' },
     summary:   { es: 'Branding, naming y animación para Cada vez más cerca de la pensión.', en: 'Branding, naming and animation for Cada vez más cerca de la pensión.' },
-    cover: '/assets/portfolio/galeria/15-cada-vez-mas-cerca-de-la-pension.png',
+    cover: '/assets/portfolio/galeria/15-cada-vez-mas-cerca-de-la-pension.webp',
     aspect: '1440/605', accent: '#EDFB8C',
-    heroImage: '/assets/portfolio/cada-vez-mas-cerca-de-la-pension/cabecera.png',
+    heroImage: '/assets/portfolio/cada-vez-mas-cerca-de-la-pension/cabecera.webp',
     detail: {
       paragraphs: {
         es: [
@@ -1111,44 +1111,44 @@ export const PROJECTS: Project[] = [
         {
           type: 'strip',
           images: [
-            '/assets/portfolio/cada-vez-mas-cerca-de-la-pension/1.png',
-            '/assets/portfolio/cada-vez-mas-cerca-de-la-pension/2.png',
-            '/assets/portfolio/cada-vez-mas-cerca-de-la-pension/3.png',
-            '/assets/portfolio/cada-vez-mas-cerca-de-la-pension/4.png',
+            '/assets/portfolio/cada-vez-mas-cerca-de-la-pension/1.webp',
+            '/assets/portfolio/cada-vez-mas-cerca-de-la-pension/2.webp',
+            '/assets/portfolio/cada-vez-mas-cerca-de-la-pension/3.webp',
+            '/assets/portfolio/cada-vez-mas-cerca-de-la-pension/4.webp',
           ],
           aspects: ['324/324', '324/323', '324/324', '324/324'],
         },
         {
           type: 'pair',
           images: [
-            '/assets/portfolio/cada-vez-mas-cerca-de-la-pension/5.png',
-            '/assets/portfolio/cada-vez-mas-cerca-de-la-pension/6.png',
+            '/assets/portfolio/cada-vez-mas-cerca-de-la-pension/5.webp',
+            '/assets/portfolio/cada-vez-mas-cerca-de-la-pension/6.webp',
           ],
           aspects: ['645/845', '640/845'],
         },
         {
           type: 'strip',
           images: [
-            '/assets/portfolio/cada-vez-mas-cerca-de-la-pension/7.png',
-            '/assets/portfolio/cada-vez-mas-cerca-de-la-pension/8.png',
-            '/assets/portfolio/cada-vez-mas-cerca-de-la-pension/9.png',
-            '/assets/portfolio/cada-vez-mas-cerca-de-la-pension/10.png',
+            '/assets/portfolio/cada-vez-mas-cerca-de-la-pension/7.webp',
+            '/assets/portfolio/cada-vez-mas-cerca-de-la-pension/8.webp',
+            '/assets/portfolio/cada-vez-mas-cerca-de-la-pension/9.webp',
+            '/assets/portfolio/cada-vez-mas-cerca-de-la-pension/10.webp',
           ],
           aspects: ['318/318', '318/318', '318/318', '318/318'],
         },
         {
           type: 'pair',
           images: [
-            '/assets/portfolio/cada-vez-mas-cerca-de-la-pension/11.png',
-            '/assets/portfolio/cada-vez-mas-cerca-de-la-pension/12.png',
+            '/assets/portfolio/cada-vez-mas-cerca-de-la-pension/11.webp',
+            '/assets/portfolio/cada-vez-mas-cerca-de-la-pension/12.webp',
           ],
           aspects: ['643/804', '643/803'],
         },
         {
           type: 'pair',
           images: [
-            '/assets/portfolio/cada-vez-mas-cerca-de-la-pension/13.png',
-            '/assets/portfolio/cada-vez-mas-cerca-de-la-pension/14.png',
+            '/assets/portfolio/cada-vez-mas-cerca-de-la-pension/13.webp',
+            '/assets/portfolio/cada-vez-mas-cerca-de-la-pension/14.webp',
           ],
           aspects: ['638/798', '637/796'],
         },
@@ -1163,9 +1163,9 @@ export const PROJECTS: Project[] = [
     cats: ['branding'],
     catsLabel: { es: 'Branding', en: 'Branding' },
     summary:   { es: 'Identidad de marca para Claudia Sandoval.', en: 'Brand identity for Claudia Sandoval.' },
-    cover: '/assets/portfolio/galeria/16-claudia-sandoval.png',
+    cover: '/assets/portfolio/galeria/16-claudia-sandoval.webp',
     aspect: '1728/2145', accent: '#DCD0FC',
-    heroImage: '/assets/portfolio/claudia-sandoval/cabecera.png',
+    heroImage: '/assets/portfolio/claudia-sandoval/cabecera.webp',
     detail: {
       paragraphs: {
         es: [
@@ -1181,24 +1181,24 @@ export const PROJECTS: Project[] = [
         {
           type: 'pair',
           images: [
-            '/assets/portfolio/claudia-sandoval/1.png',
-            '/assets/portfolio/claudia-sandoval/2.png',
+            '/assets/portfolio/claudia-sandoval/1.webp',
+            '/assets/portfolio/claudia-sandoval/2.webp',
           ],
           aspects: ['644/799', '644/799'],
         },
         {
           type: 'pair',
           images: [
-            '/assets/portfolio/claudia-sandoval/3.png',
-            '/assets/portfolio/claudia-sandoval/4.png',
+            '/assets/portfolio/claudia-sandoval/3.webp',
+            '/assets/portfolio/claudia-sandoval/4.webp',
           ],
           aspects: ['715/715', '576/715'],
         },
         {
           type: 'pair',
           images: [
-            '/assets/portfolio/claudia-sandoval/5.png',
-            '/assets/portfolio/claudia-sandoval/6.png',
+            '/assets/portfolio/claudia-sandoval/5.webp',
+            '/assets/portfolio/claudia-sandoval/6.webp',
           ],
           aspects: ['829/572', '461/572'],
         },
@@ -1213,9 +1213,9 @@ export const PROJECTS: Project[] = [
     cats: ['illustration', 'editorial'],
     catsLabel: { es: 'Ilustración · Editorial', en: 'Illustration · Editorial' },
     summary:   { es: 'Ilustración y diseño editorial para Conversaciones en la mesa.', en: 'Illustration and editorial design for Conversaciones en la mesa.' },
-    cover: '/assets/portfolio/galeria/17-conversaciones-en-la-mesa.png',
+    cover: '/assets/portfolio/galeria/17-conversaciones-en-la-mesa.webp',
     aspect: '1959/1359', accent: '#7972FA',
-    heroImage: '/assets/portfolio/conversaciones-en-la-mesa/cabecera.png',
+    heroImage: '/assets/portfolio/conversaciones-en-la-mesa/cabecera.webp',
     detail: {
       paragraphs: {
         es: [
@@ -1228,20 +1228,20 @@ export const PROJECTS: Project[] = [
         ],
       },
       blocks: [
-        { type: 'full', images: ['/assets/portfolio/conversaciones-en-la-mesa/1.png'], aspect: '1326/974' },
+        { type: 'full', images: ['/assets/portfolio/conversaciones-en-la-mesa/1.webp'], aspect: '1326/974' },
         {
           type: 'pair',
           images: [
-            '/assets/portfolio/conversaciones-en-la-mesa/2.png',
-            '/assets/portfolio/conversaciones-en-la-mesa/3.png',
+            '/assets/portfolio/conversaciones-en-la-mesa/2.webp',
+            '/assets/portfolio/conversaciones-en-la-mesa/3.webp',
           ],
           aspects: ['653/576', '653/577'],
         },
         {
           type: 'pair',
           images: [
-            '/assets/portfolio/conversaciones-en-la-mesa/4.png',
-            '/assets/portfolio/conversaciones-en-la-mesa/5.png',
+            '/assets/portfolio/conversaciones-en-la-mesa/4.webp',
+            '/assets/portfolio/conversaciones-en-la-mesa/5.webp',
           ],
           aspects: ['653/453', '653/453'],
         },
@@ -1256,9 +1256,9 @@ export const PROJECTS: Project[] = [
     cats: ['branding'],
     catsLabel: { es: 'Branding', en: 'Branding' },
     summary:   { es: 'Identidad de marca para EDUCAPAZ.', en: 'Brand identity for EDUCAPAZ.' },
-    cover: '/assets/portfolio/galeria/18-educapaz.png',
+    cover: '/assets/portfolio/galeria/18-educapaz.webp',
     aspect: '1821/2232', accent: '#DE5738',
-    heroImage: '/assets/portfolio/educapaz/cabecera.png',
+    heroImage: '/assets/portfolio/educapaz/cabecera.webp',
     detail: {
       paragraphs: {
         es: [
@@ -1271,29 +1271,29 @@ export const PROJECTS: Project[] = [
         ],
       },
       blocks: [
-        { type: 'full', images: ['/assets/portfolio/educapaz/1.png'], aspect: '1323/43' },
-        { type: 'full', images: ['/assets/portfolio/educapaz/2.png'], aspect: '1323/338' },
+        { type: 'full', images: ['/assets/portfolio/educapaz/1.webp'], aspect: '1323/43' },
+        { type: 'full', images: ['/assets/portfolio/educapaz/2.webp'], aspect: '1323/338' },
         {
           type: 'pair',
           images: [
-            '/assets/portfolio/educapaz/3.png',
-            '/assets/portfolio/educapaz/4.png',
+            '/assets/portfolio/educapaz/3.webp',
+            '/assets/portfolio/educapaz/4.webp',
           ],
           aspects: ['684/745', '607/744'],
         },
-        { type: 'full', images: ['/assets/portfolio/educapaz/5.png'], aspect: '1323/43' },
+        { type: 'full', images: ['/assets/portfolio/educapaz/5.webp'], aspect: '1323/43' },
         {
           type: 'triple',
           images: [
-            '/assets/portfolio/educapaz/6.png',
-            '/assets/portfolio/educapaz/7.png',
-            '/assets/portfolio/educapaz/8.png',
+            '/assets/portfolio/educapaz/6.webp',
+            '/assets/portfolio/educapaz/7.webp',
+            '/assets/portfolio/educapaz/8.webp',
           ],
           aspects: ['430/496', '429/496', '430/496'],
         },
-        { type: 'full', images: ['/assets/portfolio/educapaz/9.png'], aspect: '1323/882' },
-        { type: 'full', images: ['/assets/portfolio/educapaz/10.png'], aspect: '1323/43' },
-        { type: 'full', images: ['/assets/portfolio/educapaz/11.png'], aspect: '1323/278' },
+        { type: 'full', images: ['/assets/portfolio/educapaz/9.webp'], aspect: '1323/882' },
+        { type: 'full', images: ['/assets/portfolio/educapaz/10.webp'], aspect: '1323/43' },
+        { type: 'full', images: ['/assets/portfolio/educapaz/11.webp'], aspect: '1323/278' },
       ],
     },
   },
@@ -1305,9 +1305,9 @@ export const PROJECTS: Project[] = [
     cats: ['illustration', 'product'],
     catsLabel: { es: 'Ilustración · Producto', en: 'Illustration · Product' },
     summary:   { es: 'Ilustración y producto para Merch Cultura Caribe.', en: 'Illustration and product design for Merch Cultura Caribe.' },
-    cover: '/assets/portfolio/galeria/19-merch-cultura-caribe.png',
+    cover: '/assets/portfolio/galeria/19-merch-cultura-caribe.webp',
     aspect: '1953/2187', accent: '#EDFB8C',
-    heroImage: '/assets/portfolio/merch-cultura-caribe/cabecera.png',
+    heroImage: '/assets/portfolio/merch-cultura-caribe/cabecera.webp',
     detail: {
       paragraphs: {
         es: [
@@ -1323,35 +1323,35 @@ export const PROJECTS: Project[] = [
         {
           type: 'pair',
           images: [
-            '/assets/portfolio/merch-cultura-caribe/1.png',
-            '/assets/portfolio/merch-cultura-caribe/2.png',
+            '/assets/portfolio/merch-cultura-caribe/1.webp',
+            '/assets/portfolio/merch-cultura-caribe/2.webp',
           ],
           aspects: ['683/764', '617/764'],
         },
         {
           type: 'triple',
           images: [
-            '/assets/portfolio/merch-cultura-caribe/3.png',
-            '/assets/portfolio/merch-cultura-caribe/4.png',
-            '/assets/portfolio/merch-cultura-caribe/5.png',
+            '/assets/portfolio/merch-cultura-caribe/3.webp',
+            '/assets/portfolio/merch-cultura-caribe/4.webp',
+            '/assets/portfolio/merch-cultura-caribe/5.webp',
           ],
           aspects: ['428/479', '428/479', '431/482'],
         },
-        { type: 'full', images: ['/assets/portfolio/merch-cultura-caribe/6.png'], aspect: '1328/565' },
+        { type: 'full', images: ['/assets/portfolio/merch-cultura-caribe/6.webp'], aspect: '1328/565' },
         {
           type: 'pair',
           images: [
-            '/assets/portfolio/merch-cultura-caribe/7.png',
-            '/assets/portfolio/merch-cultura-caribe/8.png',
+            '/assets/portfolio/merch-cultura-caribe/7.webp',
+            '/assets/portfolio/merch-cultura-caribe/8.webp',
           ],
           aspects: ['651/728', '652/729'],
         },
-        { type: 'full', images: ['/assets/portfolio/merch-cultura-caribe/9.png'], aspect: '1320/340' },
+        { type: 'full', images: ['/assets/portfolio/merch-cultura-caribe/9.webp'], aspect: '1320/340' },
         {
           type: 'pair',
           images: [
-            '/assets/portfolio/merch-cultura-caribe/10.png',
-            '/assets/portfolio/merch-cultura-caribe/11.png',
+            '/assets/portfolio/merch-cultura-caribe/10.webp',
+            '/assets/portfolio/merch-cultura-caribe/11.webp',
           ],
           aspects: ['651/729', '651/729'],
         },
@@ -1366,9 +1366,9 @@ export const PROJECTS: Project[] = [
     cats: ['branding', 'naming'],
     catsLabel: { es: 'Branding · Naming', en: 'Branding · Naming' },
     summary:   { es: 'Naming y branding para Jolgorio.', en: 'Naming and branding for Jolgorio.' },
-    cover: '/assets/portfolio/galeria/20-jolgorio.png',
+    cover: '/assets/portfolio/galeria/20-jolgorio.webp',
     aspect: '3963/4920', accent: '#DCD0FC',
-    heroImage: '/assets/portfolio/jolgorio/cabecera.png',
+    heroImage: '/assets/portfolio/jolgorio/cabecera.webp',
     detail: {
       paragraphs: {
         es: [
@@ -1384,43 +1384,43 @@ export const PROJECTS: Project[] = [
         {
           type: 'pair',
           images: [
-            '/assets/portfolio/jolgorio/1.png',
-            '/assets/portfolio/jolgorio/2.png',
+            '/assets/portfolio/jolgorio/1.webp',
+            '/assets/portfolio/jolgorio/2.webp',
           ],
           aspects: ['637/791', '637/791'],
         },
         {
           type: 'triple',
           images: [
-            '/assets/portfolio/jolgorio/3.png',
-            '/assets/portfolio/jolgorio/4.png',
-            '/assets/portfolio/jolgorio/5.png',
+            '/assets/portfolio/jolgorio/3.webp',
+            '/assets/portfolio/jolgorio/4.webp',
+            '/assets/portfolio/jolgorio/5.webp',
           ],
           aspects: ['427/538', '428/538', '429/539'],
         },
         {
           type: 'pair',
           images: [
-            '/assets/portfolio/jolgorio/6.png',
-            '/assets/portfolio/jolgorio/7.png',
+            '/assets/portfolio/jolgorio/6.webp',
+            '/assets/portfolio/jolgorio/7.webp',
           ],
           aspects: ['658/816', '654/817'],
         },
-        { type: 'full', images: ['/assets/portfolio/jolgorio/8.png'], aspect: '1321/1640' },
+        { type: 'full', images: ['/assets/portfolio/jolgorio/8.webp'], aspect: '1321/1640' },
         {
           type: 'pair',
           images: [
-            '/assets/portfolio/jolgorio/9.png',
-            '/assets/portfolio/jolgorio/10.png',
+            '/assets/portfolio/jolgorio/9.webp',
+            '/assets/portfolio/jolgorio/10.webp',
           ],
           aspects: ['635/789', '635/789'],
         },
         {
           type: 'triple',
           images: [
-            '/assets/portfolio/jolgorio/11.png',
-            '/assets/portfolio/jolgorio/12.png',
-            '/assets/portfolio/jolgorio/13.png',
+            '/assets/portfolio/jolgorio/11.webp',
+            '/assets/portfolio/jolgorio/12.webp',
+            '/assets/portfolio/jolgorio/13.webp',
           ],
           aspects: ['429/535', '428/535', '428/535'],
         },
@@ -1435,9 +1435,9 @@ export const PROJECTS: Project[] = [
     cats: ['illustration', 'editorial'],
     catsLabel: { es: 'Ilustración · Editorial', en: 'Illustration · Editorial' },
     summary:   { es: 'Ilustración y diseño editorial para el Manual del Procrastinador.', en: 'Illustration and editorial design for the Manual del Procrastinador.' },
-    cover: '/assets/portfolio/galeria/21-procrastinador.png',
+    cover: '/assets/portfolio/galeria/21-procrastinador.webp',
     aspect: '1326/920', accent: '#7972FA',
-    heroImage: '/assets/portfolio/procrastinador/cabecera.png',
+    heroImage: '/assets/portfolio/procrastinador/cabecera.webp',
     detail: {
       paragraphs: {
         es: [
@@ -1448,25 +1448,25 @@ export const PROJECTS: Project[] = [
         ],
       },
       blocks: [
-        { type: 'full', images: ['/assets/portfolio/procrastinador/1.png'], aspect: '1326/920' },
+        { type: 'full', images: ['/assets/portfolio/procrastinador/1.webp'], aspect: '1326/920' },
         {
           type: 'pair',
           images: [
-            '/assets/portfolio/procrastinador/2.png',
-            '/assets/portfolio/procrastinador/3.png',
+            '/assets/portfolio/procrastinador/2.webp',
+            '/assets/portfolio/procrastinador/3.webp',
           ],
           aspects: ['650/573', '649/573'],
         },
         {
           type: 'triple',
           images: [
-            '/assets/portfolio/procrastinador/4.png',
-            '/assets/portfolio/procrastinador/5.png',
-            '/assets/portfolio/procrastinador/6.png',
+            '/assets/portfolio/procrastinador/4.webp',
+            '/assets/portfolio/procrastinador/5.webp',
+            '/assets/portfolio/procrastinador/6.webp',
           ],
           aspects: ['421/371', '421/371', '421/371'],
         },
-        { type: 'full', images: ['/assets/portfolio/procrastinador/7.png'], aspect: '1326/1170' },
+        { type: 'full', images: ['/assets/portfolio/procrastinador/7.webp'], aspect: '1326/1170' },
       ],
     },
   },

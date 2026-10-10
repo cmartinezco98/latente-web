@@ -22,7 +22,7 @@ yarn-error.log*
 .env*.local
 
 # google oauth client secret (downloaded from Cloud Console)
-./secrets
+/secrets/
 client_secret_*.json
 token.json
 get-gmail-refresh-token.mjs
@@ -30,19 +30,6 @@ get-gmail-refresh-token.mjs
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-# images
-*.jpg
-*.jpeg
-*.png
-*.webp
-*.gif
-*.avif
-*.svg
-*.ico
-*.mp4
-*.mov
-*.webm
 
 # local
 optimizar-imagenes.js

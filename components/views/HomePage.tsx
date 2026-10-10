@@ -67,7 +67,7 @@ export default function HomePage({ lang }: HomePageProps) {
               loop
               playsInline
               preload="auto"
-              poster="/assets/home/cabecera-prov.png"
+              poster="/assets/home/cabecera-prov.webp"
               aria-label="Latente studio"
             >
               <source src="/assets/home/cabecera.mp4" type="video/mp4" />
